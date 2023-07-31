@@ -1,0 +1,13 @@
+.wrapper {
+    display: grid;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    grid-template-areas:
+        "head head "
+        "menu  content "
+        "menu  content ";
+    height: 100vh;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+}

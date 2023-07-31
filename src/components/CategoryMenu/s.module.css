@@ -1,0 +1,12 @@
+.menuWrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content; 
+    font-size: 18px;
+    background-color: #1876D1;
+}
+
+.menuWrapper a {
+    text-decoration: none;
+    color: white;
+}
