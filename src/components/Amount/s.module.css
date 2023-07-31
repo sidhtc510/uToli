@@ -1,19 +1,15 @@
 .amount_wrap {
     /* height: 100px; */
     background-color: #1876d1;
-}
-
-.amount_wrap {
+    padding: 20px;
     color: white;
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
 }
 
-.amount_btn{
-
-    width: 90%;
+.amount_btn {
+    width: 100%;
     height: 70px;
     font-weight: bold !important;
-
 }

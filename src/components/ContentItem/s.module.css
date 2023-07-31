@@ -1,17 +1,19 @@
-.contentItem_item{
+.contentItem_item {
     display: inherit;
     position: relative;
     width: 200px;
 }
 
-.contentItem_item h4{
+.contentItem_item h4 {
     position: absolute;
     top: 5px;
     left: 5px;
     color: white;
-    background-color:#1876D1;
+    background-color: #00000031;
+    backdrop-filter: blur(5px);
     padding: 5px;
     border-radius: 4px;
+    font-size: 1.5rem;
 }
 
 .contentItem_item img {
@@ -19,12 +21,13 @@
     width: 100%;
     border-radius: 5px;
 }
-.contentItem_item div{
+.contentItem_item div {
     position: absolute;
     bottom: 5px;
     right: 5px;
     color: white;
-    background-color: #1876D1;
+    background-color: #1876d1;
     padding: 5px;
     border-radius: 4px;
+    font-size: 1.2rem;
 }
