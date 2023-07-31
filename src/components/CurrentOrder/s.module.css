@@ -1,0 +1,5 @@
+.currentOrder {
+    border-left: 4px solid #1876d1;
+    height: 100%;
+    overflow: auto;
+}

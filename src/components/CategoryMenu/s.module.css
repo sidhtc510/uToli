@@ -4,6 +4,9 @@
     width: fit-content; 
     font-size: 18px;
     background-color: #1876D1;
+    height: 100%;
+    overflow: auto;
+    max-width: 240px;
 }
 
 .menuWrapper a {

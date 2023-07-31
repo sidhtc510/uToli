@@ -2,11 +2,13 @@ import "../../App.css";
 import { useSelector } from "react-redux";
 import Header from "../Header";
 import MainPage from "../Pages/MainPage";
-import CategoryPage from "../Pages/CategoryPage";
+import ProductsPage from "../Pages/ProductsPage";
 import { Routes, Route } from "react-router-dom";
 import CategoryMenu from "../CategoryMenu";
 import Grid from "../UI/Grid";
 import Content from "../UI/Content";
+import CurrentOrder from "../CurrentOrder";
+import Amount from "../Amount";
 
 function App() {
     const categories = useSelector(({ categories }) => categories.list);
@@ -19,9 +21,11 @@ function App() {
             <Content style={{ gridArea: "content" }}>
                 <Routes>
                     <Route path="/" element={<MainPage />} />
-                    <Route path="/category/:category_id" element={<CategoryPage />} />
+                    <Route path="/products_category/:category_title" element={<ProductsPage products={products} categories={categories} />} />
                 </Routes>
             </Content>
+            <CurrentOrder style={{ gridArea: "current_order" }} />
+            <Amount style={{ gridArea: "amount" }} />
         </Grid>
     );
 }

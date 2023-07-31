@@ -1,0 +1,19 @@
+.amount_wrap {
+    /* height: 100px; */
+    background-color: #1876d1;
+}
+
+.amount_wrap {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.amount_btn{
+
+    width: 90%;
+    height: 70px;
+    font-weight: bold !important;
+
+}

@@ -1,10 +1,10 @@
-export default  [
+export default [
     {
         id: 1,
         title: "Кофе",
         description: "Ароматный горячий кофе",
         category_id: 1,
-        image: "ссылка на изображение кофе",
+        image: "https://picsum.photos/300/300",
         price: 3.99,
     },
     {
@@ -12,7 +12,7 @@ export default  [
         title: "Чай",
         description: "Ароматный горячий чай",
         category_id: 1,
-        image: "ссылка на изображение чая",
+        image: "https://picsum.photos/300/300",
         price: 2.49,
     },
     {
@@ -20,7 +20,7 @@ export default  [
         title: "Какао",
         description: "Вкусное горячее какао",
         category_id: 1,
-        image: "ссылка на изображение какао",
+        image: "https://picsum.photos/300/300",
         price: 4.29,
     },
     {
@@ -28,7 +28,7 @@ export default  [
         title: "Лимонад",
         description: "Освежающий холодный лимонад",
         category_id: 2,
-        image: "ссылка на изображение лимонада",
+        image: "https://picsum.photos/300/300",
         price: 2.99,
     },
     {
@@ -36,7 +36,7 @@ export default  [
         title: "Морс",
         description: "Свежий холодный морс",
         category_id: 2,
-        image: "ссылка на изображение морса",
+        image: "https://picsum.photos/300/300",
         price: 3.49,
     },
     {
@@ -44,7 +44,7 @@ export default  [
         title: "Пирожное",
         description: "Нежное ванильное пирожное",
         category_id: 3,
-        image: "ссылка на изображение пирожного",
+        image: "https://picsum.photos/300/300",
         price: 1.99,
     },
     {
@@ -52,7 +52,7 @@ export default  [
         title: "Тирамису",
         description: "Классический тирамису",
         category_id: 3,
-        image: "ссылка на изображение тирамису",
+        image: "https://picsum.photos/300/300",
         price: 3.79,
     },
     {
@@ -60,7 +60,7 @@ export default  [
         title: "Мороженое с шоколадом",
         description: "Вкусное мороженое с шоколадом",
         category_id: 4,
-        image: "ссылка на изображение мороженого с шоколадом",
+        image: "https://picsum.photos/300/300",
         price: 2.99,
     },
     {
@@ -68,7 +68,7 @@ export default  [
         title: "Мороженое с ванилью",
         description: "Нежное мороженое с ванильным вкусом",
         category_id: 4,
-        image: "ссылка на изображение мороженого с ванилью",
+        image: "https://picsum.photos/300/300",
         price: 2.99,
     },
     {
@@ -76,7 +76,7 @@ export default  [
         title: "Мороженое с клубникой",
         description: "Сладкое мороженое с кусочками свежей клубники",
         category_id: 4,
-        image: "ссылка на изображение мороженого с клубникой",
+        image: "https://picsum.photos/300/300",
         price: 3.49,
     },
 
@@ -85,7 +85,7 @@ export default  [
         title: "Какао с маршмеллоу",
         description: "Горячее какао с маршмеллоу",
         category_id: 1,
-        image: "ссылка на изображение какао с маршмеллоу",
+        image: "https://picsum.photos/300/300",
         price: 4.49,
     },
     {
@@ -93,7 +93,7 @@ export default  [
         title: "Черный чай",
         description: "Ароматный черный чай",
         category_id: 1,
-        image: "ссылка на изображение черного чая",
+        image: "https://picsum.photos/300/300",
         price: 1.99,
     },
     {
@@ -101,7 +101,7 @@ export default  [
         title: "Фруктовый чай",
         description: "Восхитительный фруктовый чай",
         category_id: 1,
-        image: "ссылка на изображение фруктового чая",
+        image: "https://picsum.photos/300/300",
         price: 2.99,
     },
     {
@@ -109,7 +109,7 @@ export default  [
         title: "Лимонад с мятой",
         description: "Освежающий холодный лимонад с мятой",
         category_id: 2,
-        image: "ссылка на изображение лимонада с мятой",
+        image: "https://picsum.photos/300/300",
         price: 3.29,
     },
     {
@@ -117,7 +117,7 @@ export default  [
         title: "Айс-латте",
         description: "Леденящий латте с молоком",
         category_id: 2,
-        image: "ссылка на изображение айс-латте",
+        image: "https://picsum.photos/300/300",
         price: 4.99,
     },
     {
@@ -125,7 +125,7 @@ export default  [
         title: "Шоколадный маффин",
         description: "Нежный шоколадный маффин",
         category_id: 3,
-        image: "ссылка на изображение шоколадного маффина",
+        image: "https://picsum.photos/300/300",
         price: 2.49,
     },
     {
@@ -133,7 +133,7 @@ export default  [
         title: "Чизкейк",
         description: "Воздушный чизкейк",
         category_id: 3,
-        image: "ссылка на изображение чизкейка",
+        image: "https://picsum.photos/300/300",
         price: 3.99,
     },
     {
@@ -141,7 +141,7 @@ export default  [
         title: "Клубничное мороженое",
         description: "Сладкое мороженое с натуральным клубничным вкусом",
         category_id: 4,
-        image: "ссылка на изображение клубничного мороженого",
+        image: "https://picsum.photos/300/300",
         price: 3.49,
     },
     {
@@ -149,7 +149,7 @@ export default  [
         title: "Шоколадное мороженое",
         description: "Классическое шоколадное мороженое",
         category_id: 4,
-        image: "ссылка на изображение шоколадного мороженого",
+        image: "https://picsum.photos/300/300",
         price: 3.49,
     },
     {
@@ -157,7 +157,7 @@ export default  [
         title: "Фруктовый морозиво",
         description: "Свежее фруктовое мороженое",
         category_id: 4,
-        image: "ссылка на изображение фруктового мороженого",
+        image: "https://picsum.photos/300/300",
         price: 3.99,
     },
 ];
