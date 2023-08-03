@@ -1,31 +1,25 @@
-import React from 'react'
+import React, { useContext } from "react";
 import s from "./s.module.css";
-import OredredProductsContainer from './OredredProductsContainer';
-export default function CurrentOrder({...props}) {
+import OredredProductsContainer from "./OredredProductsContainer";
+import { useSelector } from "react-redux";
+import { Context } from "../../context";
+export default function CurrentOrder({ ...props }) {
+    const { setAmount } = useContext(Context);
 
-  const products_shablon = [
-    {
-      id: 1,
-      title: "Кофе",
-      description: "Ароматный горячий кофе",
-      category_id: 1,
-      image: "https://picsum.photos/300/300",
-      price: 3.99,
-  },
-  {
-      id: 2,
-      title: "Чай",
-      description: "Ароматный горячий чай",
-      category_id: 1,
-      image: "https://picsum.photos/300/300",
-      price: 2.49,
-  }
-  ]
+    const products = useSelector(({ products }) => products);
+    const currentOrder = useSelector((state) => state.currentOrder.list);
 
-  return (
-    <div className={s.currentOrder} {...props}>
-     <h2>Current order</h2>
-     <OredredProductsContainer  products={products_shablon}/>
-    </div>
-  )
+    const result = currentOrder.map((item) => {
+        const product = products.find(({ id }) => id === item.id);
+        return { ...product, ...item };
+    });
+
+    setAmount(result.reduce((acc, el) => acc + el.price * el.count, 0).toFixed(2));
+
+    return (
+        <div className={s.currentOrder} {...props}>
+            <h2>Current order</h2>
+            <OredredProductsContainer products={result} />
+        </div>
+    );
 }

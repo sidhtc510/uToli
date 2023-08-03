@@ -1,9 +1,14 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: Roboto, sans-serif;
-  }
+    font-family: "Pangolin", cursive;
+}
+
+a {
+    font-family: "Pangolin", cursive;
+    text-decoration: none;
+}

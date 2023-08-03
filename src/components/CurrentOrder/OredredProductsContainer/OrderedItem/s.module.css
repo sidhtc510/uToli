@@ -1,16 +1,25 @@
 .orderedItem_item_wrap {
-
+    display: grid;
+    grid-template-columns: 100px 1fr;
     padding: 15px 3px;
     border-bottom: 2px solid gray;
 }
-.orderedItem_item_wrap p{
+.orderedItem_item_wrap img {
+    width: 100%;
+}
+.orderedItem_item_wrap p {
+    font-size: 1.3rem;
     padding: 2px 2px 10px 5px;
 }
-.orderedItem_item_wrap > div{
+.orderedItem_item_wrap > div {
+    display: flex;
+    flex-direction: column;
+}
+.orderedItem_item_wrap > div > div {
     display: flex;
     justify-content: space-between;
 }
 
-.orderedItem_item_wrap > div button:last-child{
-    background-color:     rgb(211, 47, 47);
+.orderedItem_item_wrap > div button:last-child {
+    background-color: rgb(211, 47, 47);
 }

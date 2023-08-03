@@ -10,6 +10,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import s from './s.module.css'
+import  CheckboxMy  from "../UI/CheckboxMy";
+import { Context } from "../../context";
 
 const Search = styled("div")(({ theme }) => ({
     position: "relative",
@@ -54,7 +56,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function Header({...props}) {
+export default function Header({ ...props}) {
+const {darkMode, setDarkmode} = React.useContext(Context)
+
     return (
         <Box className={s.myStyle} sx={{ flexGrow: 1 }} {...props}>
             <AppBar position="static">
@@ -63,6 +67,9 @@ export default function Header({...props}) {
                     <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
                         <Link to="/">uToli</Link>
                     </Typography>
+
+                    <CheckboxMy checked={darkMode} onChange={()=>setDarkmode(!darkMode)} />
+
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
