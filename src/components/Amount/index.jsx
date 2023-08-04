@@ -6,7 +6,6 @@ import { Context } from "../../context";
 export default function Amount() {
     const { amount, setIsModalOpen } = useContext(Context);
 
-    console.log((amount===0));
     return (
         <div className={s.amount_wrap}>
             <p>{amount}</p>

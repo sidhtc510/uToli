@@ -42,7 +42,7 @@ export default function ModalWindow({ className, result }) {
                 </p>
                 <p>Change: {change < 0 ? "0" : change.toFixed(2)}</p>
 
-                <Button onClick={settling}>Settling order</Button>
+                <Button onClick={settling}>Settling the order</Button>
             </div>
         </div>
     );
