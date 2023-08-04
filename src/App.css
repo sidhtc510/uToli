@@ -6,6 +6,7 @@
 
 body {
     font-family: "Pangolin", cursive;
+    user-select: none;
 }
 
 a {
