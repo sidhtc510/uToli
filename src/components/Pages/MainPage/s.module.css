@@ -1,0 +1,8 @@
+.mainPage_wrapper {
+}
+.wrapStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

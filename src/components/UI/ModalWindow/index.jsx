@@ -16,7 +16,7 @@ export default function ModalWindow({ className, result }) {
     const [change, setChange] = useState(0);
 
     const settling = () => {
-        dispatch(addAction(result));
+        dispatch(addAction({list:[...result], orderAmount:amount}));
         dispatch(clearAction());
         setIsModalOpen(false);
         setChange(0);

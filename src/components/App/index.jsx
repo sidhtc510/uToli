@@ -17,16 +17,17 @@ import ModalWindow from "../UI/ModalWindow";
 function App() {
     const categories = useSelector(({ categories }) => categories.list);
     const products = useSelector(({ products }) => products);
-    const orderHistory = useSelector(({ orderHistory }) => orderHistory);
-    const currentOrder = useSelector((state) => state.currentOrder.list);
-
     const [amountStr, setAmount] = useState(0);
     const amount = parseFloat(amountStr);
     
+    let currentOrder = useSelector((state) => state.currentOrder);
+    currentOrder = { ...currentOrder, orderAmount: amount };
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [darkMode, setDarkmode] = useLocalStorage("darkMode", false);
 
-    const result = currentOrder.map((item) => {
+
+    const result = currentOrder.list.map((item) => {
         const product = products.find(({ id }) => id === item.id);
         return { ...product, ...item };
     });
