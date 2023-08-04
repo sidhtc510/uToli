@@ -19,13 +19,18 @@ export default function ModalWindow({ className, result }) {
         dispatch(addAction(result));
         dispatch(clearAction());
         setIsModalOpen(false);
-        setChange(0)
+        setChange(0);
     };
 
     useEffect(() => {
         if (!isModalOpen) {
             inputRef.current.value = "";
-            setChange(0)
+            setChange(0);
+        }
+
+        if (isModalOpen) {
+            // console.log(isModalOpen);
+            inputRef.current.focus();  // Не работает  причина не ясна
         }
     }, [isModalOpen]);
 
@@ -38,7 +43,7 @@ export default function ModalWindow({ className, result }) {
 
                 <p>Due: {amount}</p>
                 <p>
-                    Cash: <input ref={inputRef} type="number" onChange={({ target }) => setChange(+target.value - amount)} />
+                    Cash: <input id="myTextField" ref={inputRef} type="number" onChange={({ target }) => setChange(+target.value - amount)} />
                 </p>
                 <p>Change: {change < 0 ? "0" : change.toFixed(2)}</p>
 

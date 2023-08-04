@@ -16,7 +16,6 @@ export const orderHistorySlice = createSlice({
     initialState: { list: read() },
     reducers: {
         addAction(state, { payload }) {
-            console.log("Order History Slice - payload", payload);
             state.list.push({ id: Date.now(), date: new Date(), content: payload.map((item) => ({ count: item.count, id: item.id, name: item.name, price: item.price })) });
             write(state.list);
         },

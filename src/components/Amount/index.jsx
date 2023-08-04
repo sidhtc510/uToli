@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import s from "./s.module.css";
 import Button from "../UI/Button";
 import { Context } from "../../context";
