@@ -57,9 +57,13 @@ export const currentOrderSlice = createSlice({
             state.list = state.list.filter((el) => el.id !== action.payload);
             write(state.list);
         },
+        clearAction(state){
+            state.list = []
+            write(state.list);
+        }
     },
 });
 
-export const {addAction, incrAction, decrAction, deleteAction} = currentOrderSlice.actions;
+export const {addAction, incrAction, decrAction, deleteAction, clearAction} = currentOrderSlice.actions;
 
 export default currentOrderSlice.reducer;

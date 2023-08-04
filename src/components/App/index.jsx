@@ -16,12 +16,14 @@ import { Context } from "../../context";
 function App() {
     const categories = useSelector(({ categories }) => categories.list);
     const products = useSelector(({ products }) => products);
+    const orderHistory = useSelector(({ orderHistory }) => orderHistory);
     const [amount, setAmount] = useState(0);
     const [darkMode, setDarkmode] = useLocalStorage("darkMode", false);
 
+    // console.log("App - orderHistory state", orderHistory);
     return (
         <Context.Provider value={{ darkMode, setDarkmode, amount, setAmount }}>
-            <Grid >
+            <Grid>
                 <Header style={{ gridArea: "head" }} />
                 <CategoryMenu categories={categories} style={{ gridArea: "menu" }} />
                 <Content style={{ gridArea: "content" }}>
