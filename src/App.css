@@ -5,11 +5,13 @@
 }
 
 body {
-    font-family: "Pangolin", cursive;
+    font-family: 'Quicksand', sans-serif;
+    /* font-family: "Pangolin", cursive; */
     user-select: none;
 }
 
 a {
-    font-family: "Pangolin", cursive;
+    font-family: 'Quicksand', sans-serif;
+    /* font-family: "Pangolin", cursive; */
     text-decoration: none;
 }

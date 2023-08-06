@@ -36,6 +36,10 @@ function App() {
         setAmount(result.reduce((acc, el) => acc + el.price * el.count, 0).toFixed(2));
     });
 
+    console.log("darkMode", darkMode);
+    console.log("isModalOpen",isModalOpen);
+
+    
     return (
         <Context.Provider value={{ darkMode, setDarkmode, amount, setAmount, isModalOpen, setIsModalOpen }}>
             <ModalWindow className={isModalOpen ? "active" : ""} {...{ result }} />

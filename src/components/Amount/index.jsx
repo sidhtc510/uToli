@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import s from "./s.module.css";
 import Button from "../UI/Button";
 import { Context } from "../../context";
@@ -6,14 +6,14 @@ import { Context } from "../../context";
 export default function Amount() {
     const { amount, setIsModalOpen } = useContext(Context);
 
+
     return (
         <div className={s.amount_wrap}>
             <p>{amount}</p>
-       
-                <Button disabled={(amount===0)} className={s.amount_btn} onClick={() => setIsModalOpen(true)}>
-                    Settling the bill
-                </Button>
-         
+
+            <Button disabled={amount === 0} className={s.amount_btn} onClick={() => setIsModalOpen(true)}>
+                Settling the bill
+            </Button>
         </div>
     );
 }
