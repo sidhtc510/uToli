@@ -23,6 +23,7 @@ export default function ModalWindow({ className, result }) {
     };
 
     useEffect(() => {
+
         if (!isModalOpen) {
             inputRef.current.value = "";
             setChange(0);

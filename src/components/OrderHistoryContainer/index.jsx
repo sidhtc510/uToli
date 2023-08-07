@@ -19,11 +19,11 @@ const normalizeDate = (dateString)=>{
     const formattedDate = dateObj.toLocaleString('en-EN', options);
     return formattedDate
 }
-
+// console.log("OrderHistoryContainer", orderHistory);
 
   return (
     <div>
-        {orderHistory.map(el=><p>{normalizeDate(el.date)} | Amount: <b style={{color:"red"}}> {el.orderAmount}</b></p>)}
+        {orderHistory.list.map(el=><p>{normalizeDate(el.date)} | Amount: <b style={{color:"red"}}> {el.orderAmount}</b></p>)}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import "../../App.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../Header";
 import MainPage from "../Pages/MainPage";
 import ProductsPage from "../Pages/ProductsPage";
@@ -13,19 +13,22 @@ import { useEffect, useState } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { Context } from "../../context";
 import ModalWindow from "../UI/ModalWindow";
+import { searchAction } from "../../store/slices/productsSlice";
 
 function App() {
+    const dispatch = useDispatch();
+
     const categories = useSelector(({ categories }) => categories.list);
     const products = useSelector(({ products }) => products);
     const [amountStr, setAmount] = useState(0);
     const amount = parseFloat(amountStr);
-    
+
     let currentOrder = useSelector((state) => state.currentOrder);
     currentOrder = { ...currentOrder, orderAmount: amount };
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [darkMode, setDarkmode] = useLocalStorage("darkMode", false);
-
+    const [searchUtoli, setSearchUtoli] = useLocalStorage("searchUtoli", '');
 
     const result = currentOrder.list.map((item) => {
         const product = products.find(({ id }) => id === item.id);
@@ -36,12 +39,15 @@ function App() {
         setAmount(result.reduce((acc, el) => acc + el.price * el.count, 0).toFixed(2));
     });
 
-    console.log("darkMode", darkMode);
-    console.log("isModalOpen",isModalOpen);
+    useEffect(() => {
+        dispatch(searchAction(searchUtoli));
+    }, [dispatch, searchUtoli, products]);
 
-    
+    // console.log("darkMode", darkMode);
+    // console.log("isModalOpen",isModalOpen);
+
     return (
-        <Context.Provider value={{ darkMode, setDarkmode, amount, setAmount, isModalOpen, setIsModalOpen }}>
+        <Context.Provider value={{ darkMode, setDarkmode, amount, setAmount, isModalOpen, setIsModalOpen, searchUtoli, setSearchUtoli }}>
             <ModalWindow className={isModalOpen ? "active" : ""} {...{ result }} />
             <Grid>
                 <Header style={{ gridArea: "head" }} />
@@ -50,6 +56,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<MainPage />} />
                         <Route path="/products_category/:category_title" element={<ProductsPage {...{ products, categories }} />} />
+                        <Route path="/finded_products" element={<ProductsPage {...{ products }} />} />
                     </Routes>
                 </Content>
                 <CurrentOrder style={{ gridArea: "current_order" }} {...{ result }} />
