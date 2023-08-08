@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { dateFilterAction } from "../../store/slices/orderHistorySlice";
+import { clearFilter, dateFilterAction } from "../../store/slices/orderHistorySlice";
 
 export default function DatePicker() {
     const dispatch = useDispatch();
     const [date, setDate] = useState();
     const [prevDate, setPrevDate] = useState();
+    const dateInput = useRef();
 
     useEffect(() => {
         if (date !== prevDate) {
@@ -14,9 +15,15 @@ export default function DatePicker() {
         }
     }, [dispatch, date, prevDate]);
 
+    const clearFilterHandler = () => {
+        dispatch(clearFilter(true));
+        dateInput.current.value = "";
+    };
+
     return (
         <div>
-            <input type="date" onChange={(e) => setDate(e.target.value)} />
+            <input type="date" onChange={(e) => setDate(e.target.value)} ref={dateInput} />
+            <button onClick={clearFilterHandler}>X</button>
         </div>
     );
 }

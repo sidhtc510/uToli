@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-// const myConsole = (data) => {
-//     const stateStringify = JSON.stringify(data);
-//     console.log(JSON.parse(stateStringify));
-// };
+const myConsole = (data) => {
+    const stateStringify = JSON.stringify(data);
+    console.log(JSON.parse(stateStringify));
+};
 
 const read = () => {
     return JSON.parse(localStorage.getItem("orderHistory")) ?? { list: [] };
@@ -11,7 +11,7 @@ const write = (data) => {
     localStorage.setItem("orderHistory", JSON.stringify(data));
 };
 
-export const orderHistorySlice = createSlice({
+const orderHistorySlice = createSlice({
     name: "orderHistory",
     initialState: read(),
 
@@ -29,15 +29,23 @@ export const orderHistorySlice = createSlice({
             // myConsole(state);
         },
         dateFilterAction(state, { payload }) {
-            state.list = state.list.filter((item) => {
-                const itemDate = new Date(item.date).toISOString().split("T")[0];
-                return itemDate === payload;
-            });
+            state.list = state.list.map((item) => ({
+                ...item,
+                show: { search: true, date: new Date(item.date).toISOString().split("T")[0] === payload },
+            }));
+            // myConsole(state);
             write(state);
         },
+        clearFilter(state, {payload}){
+            state.list = state.list.map((item) => ({
+                ...item,
+                show: { search: true, date: true },
+            }));
+            write(state);
+        }
     },
 });
 
-export const { addAction, dateFilterAction } = orderHistorySlice.actions;
+export const { addAction, dateFilterAction, clearFilter } = orderHistorySlice.actions;
 
 export default orderHistorySlice.reducer;

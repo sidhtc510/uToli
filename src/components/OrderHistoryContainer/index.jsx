@@ -1,29 +1,32 @@
-import React from 'react'
+import React from "react";
 
-export default function OrderHistoryContainer({orderHistory}) {
-  
+export default function OrderHistoryContainer({ orderHistory }) {
+    const normalizeDate = (dateString) => {
+        const dateObj = new Date(dateString);
+        const options = {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            // timeZoneName: 'short'
+        };
 
-
-const normalizeDate = (dateString)=>{
-    const dateObj = new Date(dateString);
-    const options = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        // timeZoneName: 'short'
+        const formattedDate = dateObj.toLocaleString("en-EN", options);
+        return formattedDate;
     };
-    
-    const formattedDate = dateObj.toLocaleString('en-EN', options);
-    return formattedDate
-}
-// console.log("OrderHistoryContainer", orderHistory);
+    // console.log("OrderHistoryContainer", orderHistory);
 
-  return (
-    <div>
-        {orderHistory.list.map(el=><p>{normalizeDate(el.date)} | Amount: <b style={{color:"red"}}> {el.orderAmount}</b></p>)}
-    </div>
-  )
+    return (
+        <div>
+            {orderHistory.list
+                .filter(({ show }) => Object.values(show).every((item) => item))
+                .map((el) => (
+                    <p>
+                        {normalizeDate(el.date)} | Amount: <b style={{ color: "red" }}> {el.orderAmount}</b>
+                    </p>
+                ))}
+        </div>
+    );
 }
