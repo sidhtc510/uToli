@@ -1,9 +1,13 @@
+:root{
+    --var-body-bg:#1876d1
+}
+
 .menuWrapper {
     display: flex;
     flex-direction: column;
     width: fit-content;
     font-size: 18px;
-    background-color: #1876d1;
+    background-color: var(--var-body-bg);
     height: 100%;
     overflow: auto;
     max-width: 240px;
