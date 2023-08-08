@@ -16,17 +16,17 @@ export default function OrderHistoryContainer({ orderHistory }) {
         const formattedDate = dateObj.toLocaleString("en-EN", options);
         return formattedDate;
     };
-    // console.log("OrderHistoryContainer", orderHistory);
-
+    const producedOrderHistory = orderHistory.list.filter(({ show }) => Object.values(show).every((item) => item));
+    const dayAmount = producedOrderHistory.reduce((acc, el) => acc + el.orderAmount, 0);
+    console.log(dayAmount);
     return (
         <div>
-            {orderHistory.list
-                .filter(({ show }) => Object.values(show).every((item) => item))
-                .map((el) => (
-                    <p>
-                        {normalizeDate(el.date)} | Amount: <b style={{ color: "red" }}> {el.orderAmount}</b>
-                    </p>
-                ))}
+            <div>Amount: {dayAmount}</div>
+            {producedOrderHistory.map((el) => (
+                <p>
+                    {normalizeDate(el.date)} | Amount: <b style={{ color: "red" }}> {el.orderAmount}</b>
+                </p>
+            ))}
         </div>
     );
 }

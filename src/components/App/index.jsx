@@ -28,7 +28,7 @@ function App() {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [darkMode, setDarkmode] = useLocalStorage("darkMode", false);
-    const [searchUtoli, setSearchUtoli] = useLocalStorage("searchUtoli", '');
+    const [searchUtoli, setSearchUtoli] = useLocalStorage("searchUtoli", "");
 
     const result = currentOrder.list.map((item) => {
         const product = products.find(({ id }) => id === item.id);

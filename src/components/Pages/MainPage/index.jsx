@@ -7,7 +7,7 @@ import DatePicker from "../../DatePicker";
 
 export default function MainPage() {
     const orderHistory = useSelector(({ orderHistory }) => orderHistory);
-    // console.log("MainPage", orderHistory);
+    
 
     return (
         <div className={orderHistory.list.length <= 0 ? s.wrapStyle : s.mainPage_wrapper}>
