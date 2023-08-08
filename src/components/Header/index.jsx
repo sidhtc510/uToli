@@ -17,7 +17,7 @@ export default function Header({ ...props}) {
 const {darkMode, setDarkmode} = React.useContext(Context)
 
     return (
-        <Box className={s.myStyle} sx={{ flexGrow: 1 }} {...props}>
+        <Box className={s.box_wrap} sx={{ flexGrow: 1 }} {...props}>
             <AppBar position="static">
                 <Toolbar>
 

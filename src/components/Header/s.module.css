@@ -1,4 +1,8 @@
-.myStyle a {
+.box_wrap{
+    background-color: blueviolet !important;
+    width: 100%;
+}
+.box_wrap a {
     text-decoration: none;
     color: white;
 }

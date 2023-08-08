@@ -1,6 +1,8 @@
+@import "../../variables.css";
+
 .amount_wrap {
     /* height: 100px; */
-    background-color: #1876d1;
+    background-color: var(--bg-color);
     padding: 20px;
     color: white;
     font-size: 3rem;

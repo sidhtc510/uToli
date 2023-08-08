@@ -1,13 +1,11 @@
-:root{
-    --var-body-bg:#1876d1
-}
+@import "../../variables.css";
 
 .menuWrapper {
     display: flex;
     flex-direction: column;
     width: fit-content;
     font-size: 18px;
-    background-color: var(--var-body-bg);
+    background-color: var(--bg-color);
     height: 100%;
     overflow: auto;
     max-width: 240px;

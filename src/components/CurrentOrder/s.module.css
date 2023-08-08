@@ -1,5 +1,7 @@
+@import "../../variables.css";
+
 .currentOrder {
-    border-left: 4px solid #1876d1;
+    border-left: 4px solid var(--bg-color);
     height: 100%;
     overflow: auto;
 }
