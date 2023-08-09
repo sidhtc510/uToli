@@ -1,3 +1,5 @@
+@import "./variables.css";
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,4 +16,13 @@ a {
     font-family: 'Quicksand', sans-serif;
     /* font-family: "Pangolin", cursive; */
     text-decoration: none;
+}
+
+input, select{
+    border: 1ps solid gray;
+    border-radius: 4px;
+    /* background: none; */
+    outline: none;
+    background-color: var(--content-bg-color);
+    padding: 10px;
 }

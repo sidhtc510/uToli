@@ -8,6 +8,7 @@
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
+    transition: var(--transition-time);
 }
 
 .amount_btn {

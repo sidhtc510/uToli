@@ -1,7 +1,9 @@
 @import "../../variables.css";
 
 .currentOrder {
+    background-color: var(--content-bg-color);
     border-left: 4px solid var(--bg-color);
     height: 100%;
     overflow: auto;
+    transition: var(--transition-time);
 }

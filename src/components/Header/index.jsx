@@ -17,21 +17,25 @@ export default function Header({ ...props}) {
 const {darkMode, setDarkmode} = React.useContext(Context)
 
     return (
-        <Box className={s.box_wrap} sx={{ flexGrow: 1 }} {...props}>
-            <AppBar position="static">
-                <Toolbar>
+        // <Box className={s.box_wrap} sx={{ flexGrow: 1 }} {...props}>
+        //     <AppBar position="static">
+        //         <Toolbar>
 
-                    <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
-                        <Link to="/">uToli</Link>
-                    </Typography>
+        //             <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
+        //                 <Link to="/">uToli</Link>
+        //             </Typography>
 
-                    <CheckboxMy checked={darkMode} onChange={()=>setDarkmode(!darkMode)} />
+        //             <CheckboxMy checked={darkMode} onChange={()=>setDarkmode(!darkMode)} />
                     
-                    <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
-                        <MenuIcon />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
-        </Box>
+        //             <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
+        //                 <MenuIcon />
+        //             </IconButton>
+        //         </Toolbar>
+        //     </AppBar>
+        // </Box>
+        <div className={s.Header_wrap}  {...props}>
+             <Link to="/">uToli</Link>
+             <CheckboxMy checked={darkMode} onChange={()=>setDarkmode(!darkMode)} />
+        </div>
     );
 }

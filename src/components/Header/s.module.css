@@ -1,8 +1,14 @@
-.box_wrap{
-    background-color: blueviolet !important;
+@import "../../variables.css";
+.Header_wrap {
+    background-color: var(--bg-color);
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    transition: var(--transition-time);
 }
-.box_wrap a {
+.Header_wrap a {
     text-decoration: none;
     color: white;
 }

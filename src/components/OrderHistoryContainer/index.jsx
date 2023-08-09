@@ -18,7 +18,7 @@ export default function OrderHistoryContainer({ orderHistory }) {
     };
     const producedOrderHistory = orderHistory.list.filter(({ show }) => Object.values(show).every((item) => item));
     const dayAmount = producedOrderHistory.reduce((acc, el) => acc + el.orderAmount, 0);
-    console.log(dayAmount);
+    // console.log(dayAmount);
     return (
         <div>
             <div>Amount: {dayAmount}</div>

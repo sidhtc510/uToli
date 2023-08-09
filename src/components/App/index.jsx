@@ -49,7 +49,7 @@ function App() {
     return (
         <Context.Provider value={{ darkMode, setDarkmode, amount, setAmount, isModalOpen, setIsModalOpen, searchUtoli, setSearchUtoli }}>
             <ModalWindow className={isModalOpen ? "active" : ""} {...{ result }} />
-            <Grid>
+            <Grid className={darkMode ? "dark" : ""}>
                 <Header style={{ gridArea: "head" }} />
                 <CategoryMenu categories={categories} style={{ gridArea: "menu" }} />
                 <Content style={{ gridArea: "content" }}>

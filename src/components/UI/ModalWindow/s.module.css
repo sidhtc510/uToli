@@ -1,3 +1,5 @@
+@import '../../../variables.css';
+
 .modalWindow_wrapper {
     display: flex;
     justify-content: center;
@@ -10,7 +12,7 @@
     background-color: rgb(0 0 0 / 74%);
     backdrop-filter: blur(4px);
     z-index: 10;
-    transition: 0.2s;
+    transition: var(--transition-time);
 }
 
 .active {

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { sortAction } from "../../store/slices/productsSlice";
 import { useDispatch } from "react-redux";
 import { sortOptions } from "../../data/sortOptions";
+import s from './s.module.css'
 
 export default function FiltersComponent() {
     const dispatch = useDispatch();
@@ -78,7 +79,7 @@ export default function FiltersComponent() {
                 <StyledInputBase defaultValue={searchUtoli} placeholder="Search…" inputProps={{ "aria-label": "search" }} onKeyUp={search} />
             </Search>
 
-            <select onChange={sortHandle}>
+            <select onChange={sortHandle} className={s.FiltersComponent_select}>
                 {sortOptions.map((el) => (
                     <option value={el.value}>{el.title}</option>
                 ))}
