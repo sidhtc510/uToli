@@ -43,8 +43,6 @@ function App() {
         dispatch(searchAction(searchUtoli));
     }, [dispatch, searchUtoli, products]);
 
-    // console.log("darkMode", darkMode);
-    // console.log("isModalOpen",isModalOpen);
 
     return (
         <Context.Provider value={{ darkMode, setDarkmode, amount, setAmount, isModalOpen, setIsModalOpen, searchUtoli, setSearchUtoli }}>

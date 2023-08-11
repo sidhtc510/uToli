@@ -1,0 +1,11 @@
+@import '../../variables.css';
+.OrderHistoryContainer_amountWrapper > div{
+border-bottom: 1px solid gray ;
+width: fit-content;
+}
+.OrderHistoryContainer_amountWrapper > p{
+padding: 10px;
+}
+.accent{
+    color: var(--accent-color)
+}

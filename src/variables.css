@@ -1,10 +1,12 @@
 :root {
     --bg-color: #1876d1;
     --content-bg-color: #fff;
+    --accent-color: red;
     --transition-time: 0.5s;
 }
 
 .dark {
     --bg-color: #082949;
     --content-bg-color: #7e7e7e;
+    --accent-color: #530404;
 }
