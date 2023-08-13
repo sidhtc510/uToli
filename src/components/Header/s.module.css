@@ -12,3 +12,64 @@
     text-decoration: none;
     color: white;
 }
+
+.Header_wrap div {
+    display: flex;
+    align-items: center;
+}
+
+.Header_wrap .menu_button {
+    border-radius: 50%;
+    min-width: 50px;
+}
+
+.navMenuWrapper {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff00;
+    backdrop-filter: blur(4px);
+    z-index: 10;
+    transition: var(--transition-time);
+}
+
+.Header_nav_menu {
+    opacity: 0;
+    visibility: hidden;
+    width: 200px;
+    text-align: center;
+    background: #bfbfbfb8;
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+    position: absolute;
+    right: 50px;
+    top: 85px;
+    transition: var(--transition-time);
+    box-shadow: -1px 1px 3px 0px #00000066;;
+}
+.Header_nav_menu ul {
+    list-style: none;
+}
+.Header_nav_menu ul li {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 10px;
+    transition: 0.2s;
+}
+.Header_nav_menu ul li:hover{
+    background-color:antiquewhite;
+    border-radius: 8px;
+    transition: var(--transition-time);
+}
+.Header_nav_menu a {
+    /* padding: 25px 90px; */
+    color: black;
+}
+
+.active {
+    opacity: 1;
+    visibility: visible;
+}

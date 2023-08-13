@@ -11,7 +11,10 @@ export default function MainPage() {
     return (
         <div className={orderHistory.list.length <= 0 ? s.wrapStyle : s.mainPage_wrapper}>
             {orderHistory.list.length <= 0 ? (
-                <img style={{ width: "300px" }} src={img} alt="" />
+                <>
+                    <img style={{ width: "300px" }} src={img} alt="" />
+                    <p>Orders will be displayed in this page</p>
+                </>
             ) : (
                 <>
                     <DatePicker />

@@ -1,41 +1,52 @@
 import * as React from "react";
-
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-
-import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
-import s from './s.module.css'
-import  CheckboxMy  from "../UI/CheckboxMy";
+import s from "./s.module.css";
 import { Context } from "../../context";
+import { CiMenuBurger, CiSettings, CiLogout } from "react-icons/ci";
+import { LiaListAlt } from "react-icons/lia";
+import { Link } from "react-router-dom";
+import CheckboxMy from "../UI/CheckboxMy";
+import Button from "../UI/Button";
 
-
-export default function Header({ ...props}) {
-const {darkMode, setDarkmode} = React.useContext(Context)
+export default function Header({ ...props }) {
+    const { darkMode, setDarkmode } = React.useContext(Context);
+    const [nav_menu_isActive, set_nav_menu_isActive] = React.useState(false);
 
     return (
-        // <Box className={s.box_wrap} sx={{ flexGrow: 1 }} {...props}>
-        //     <AppBar position="static">
-        //         <Toolbar>
+        <>
+            <div className={s.Header_wrap} {...props}>
+                <Link to="/">uToli</Link>
+                <div>
+                    <CheckboxMy checked={darkMode} onChange={() => setDarkmode(!darkMode)} />
+                    <Button className={s.menu_button} onClick={() => set_nav_menu_isActive(true)}>
+                        <CiMenuBurger />
+                    </Button>
+                </div>
+            </div>
 
-        //             <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
-        //                 <Link to="/">uToli</Link>
-        //             </Typography>
-
-        //             <CheckboxMy checked={darkMode} onChange={()=>setDarkmode(!darkMode)} />
-                    
-        //             <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
-        //                 <MenuIcon />
-        //             </IconButton>
-        //         </Toolbar>
-        //     </AppBar>
-        // </Box>
-        <div className={s.Header_wrap}  {...props}>
-             <Link to="/">uToli</Link>
-             <CheckboxMy checked={darkMode} onChange={()=>setDarkmode(!darkMode)} />
-        </div>
+            <div className={nav_menu_isActive ? [s.navMenuWrapper, s.active].join(" ") : s.navMenuWrapper} onClick={() => set_nav_menu_isActive(false)}>
+                <nav className={nav_menu_isActive ? [s.Header_nav_menu, s.active].join(" ") : s.Header_nav_menu}>
+                    <ul>
+                        <Link to="/">
+                            <li>
+                                <LiaListAlt />
+                                Orders
+                            </li>
+                        </Link>
+                        <Link to="#">
+                            <li>
+                                <CiSettings />
+                                Settings
+                            </li>
+                        </Link>
+                        <Link to="#">
+                            <li>
+                                <CiLogout />
+                                LogOut
+                            </li>
+                        </Link>
+                    </ul>
+                </nav>
+            </div>
+        </>
     );
 }
