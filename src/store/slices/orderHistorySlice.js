@@ -36,7 +36,7 @@ const orderHistorySlice = createSlice({
             // myConsole(state);
             write(state);
         },
-        clearFilter(state, {payload}){
+        clearFilter(state){
             state.list = state.list.map((item) => ({
                 ...item,
                 show: { search: true, date: true },
