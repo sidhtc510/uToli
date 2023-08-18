@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-const myConsole = (data) => {
-    const stateStringify = JSON.stringify(data);
-    console.log(JSON.parse(stateStringify));
-};
+// const myConsole = (data) => {
+//     const stateStringify = JSON.stringify(data);
+//     console.log(JSON.parse(stateStringify));
+// };
 
 const read = () => {
     return JSON.parse(localStorage.getItem("orderHistory")) ?? { list: [] };
@@ -36,13 +36,13 @@ const orderHistorySlice = createSlice({
             // myConsole(state);
             write(state);
         },
-        clearFilter(state){
+        clearFilter(state) {
             state.list = state.list.map((item) => ({
                 ...item,
                 show: { search: true, date: true },
             }));
             write(state);
-        }
+        },
     },
 });
 

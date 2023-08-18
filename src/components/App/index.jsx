@@ -14,6 +14,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { Context } from "../../context";
 import ModalWindow from "../UI/ModalWindow";
 import { searchAction } from "../../store/slices/productsSlice";
+import OrderPage from "../Pages/OrderPage";
 
 function App() {
     const dispatch = useDispatch();
@@ -55,6 +56,8 @@ function App() {
                         <Route path="/" element={<MainPage />} />
                         <Route path="/products_category/:category_title" element={<ProductsPage {...{ products, categories }} />} />
                         <Route path="/finded_products" element={<ProductsPage {...{ products }} />} />
+                        <Route path="/order/:orderId" element={<OrderPage />} />
+
                     </Routes>
                 </Content>
                 <CurrentOrder style={{ gridArea: "current_order" }} {...{ result }} />

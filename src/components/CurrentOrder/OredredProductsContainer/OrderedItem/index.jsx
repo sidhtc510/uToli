@@ -6,7 +6,7 @@ import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { decrAction, deleteAction, incrAction } from "../../../../store/slices/currentOrderSlice";
 import { useDispatch } from "react-redux";
 
-export default function OrderedItem({ id, name, dsc, img, price, count }) {
+export default function OrderedItem({ id, name, dsc, img, price, count, isHistoryOrder }) {
     const dispatch = useDispatch();
     const [confirmDeleting, setConfirmDeleting] = useState(false);
 
@@ -29,15 +29,17 @@ export default function OrderedItem({ id, name, dsc, img, price, count }) {
                 <p>
                     {count} X {name} ({price}) = {(price * count).toFixed(2)}
                 </p>
-                <div>
-                    <Button onClick={() => dispatch(decrAction(id))}>
-                        <AiOutlineMinusCircle />
-                    </Button>
-                    <Button onClick={() => dispatch(incrAction(id))}>
-                        <AiOutlinePlusCircle />
-                    </Button>
-                    <Button onClick={deleteItem}>{confirmDeleting ? <BsCheckLg /> : <BsTrash />}</Button>
-                </div>
+                {!isHistoryOrder && (
+                    <div>
+                        <Button onClick={() => dispatch(decrAction(id))}>
+                            <AiOutlineMinusCircle />
+                        </Button>
+                        <Button onClick={() => dispatch(incrAction(id))}>
+                            <AiOutlinePlusCircle />
+                        </Button>
+                        <Button onClick={deleteItem}>{confirmDeleting ? <BsCheckLg /> : <BsTrash />}</Button>
+                    </div>
+                )}
             </div>
         </div>
     );
