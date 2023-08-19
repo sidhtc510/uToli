@@ -5,7 +5,7 @@
     justify-items: center;
 }
 
-.productsPage_wrap > div:first-child{
+/* .productsPage_wrap > div:first-child{
     grid-area: 1/5/1/1;
     border-bottom: 1px solid gray;
     width: 100%;
@@ -14,4 +14,4 @@
     gap: 10px;
     margin: 0 0 30px 0;
     align-items: center;
-}
+} */

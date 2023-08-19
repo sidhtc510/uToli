@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 import { sortAction } from "../../store/slices/productsSlice";
 import { useDispatch } from "react-redux";
 import { sortOptions } from "../../data/sortOptions";
-import s from './s.module.css'
+import s from "./s.module.css";
 
 export default function FiltersComponent() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const {searchUtoli, setSearchUtoli } = useContext(Context);
+    const { searchUtoli, setSearchUtoli } = useContext(Context);
 
     const Search = styled("div")(({ theme }) => ({
         position: "relative",
@@ -71,7 +71,7 @@ export default function FiltersComponent() {
     };
 
     return (
-        <div>
+        <div className={s.FiltersComponent_wrapper}>
             <Search>
                 <SearchIconWrapper>
                     <SearchIcon />

@@ -14,17 +14,19 @@ export default function ProductsPage({ products, categories }) {
     if (category_title !== undefined) {
         const { id } = categories.find((el) => el.category_title === category_title);
         processed_products = products.filter((el) => el.category === id);
-        setSearchUtoli('')
+        setSearchUtoli("");
     } else if (searchUtoli) {
         processed_products = products.filter(({ show }) => Object.values(show).every((item) => item));
     }
 
     return (
-        <div className={s.productsPage_wrap}>
-            <FiltersComponent />{" "}
-            {processed_products.map((item) => (
-                <ContentItem key={item.id} {...item} />
-            ))}
-        </div>
+        <>
+            <FiltersComponent />
+            <div className={s.productsPage_wrap}>
+                {processed_products.map((item) => (
+                    <ContentItem key={item.id} {...item} />
+                ))}
+            </div>
+        </>
     );
 }
