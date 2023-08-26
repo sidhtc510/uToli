@@ -19,6 +19,7 @@ export default function ProductsPage({ products, categories }) {
         processed_products = products.filter(({ show }) => Object.values(show).every((item) => item));
     }
 
+
     return (
         <>
             <FiltersComponent />

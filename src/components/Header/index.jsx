@@ -1,10 +1,11 @@
 import * as React from "react";
 import s from "./s.module.css";
 import { Context } from "../../context";
-import { CiMenuBurger, CiSettings, CiLogout } from "react-icons/ci";
+import { CiMenuBurger, CiSettings, CiLogout, CiDark, CiLight } from "react-icons/ci";
 import { LiaListAlt } from "react-icons/lia";
 import { Link } from "react-router-dom";
-import CheckboxMy from "../UI/CheckboxMy";
+// import CheckboxMy from "../UI/CheckboxMy";
+import { Switch } from "antd";
 import Button from "../UI/Button";
 
 export default function Header({ ...props }) {
@@ -16,7 +17,9 @@ export default function Header({ ...props }) {
             <div className={s.Header_wrap} {...props}>
                 <Link to="/">uToli</Link>
                 <div>
-                    <CheckboxMy checked={darkMode} onChange={() => setDarkmode(!darkMode)} />
+                    {/* <CheckboxMy checked={darkMode} onChange={() => setDarkmode(!darkMode)} /> */}
+                    <Switch checked={darkMode} onChange={() => setDarkmode(!darkMode)} />
+
                     <Button className={s.menu_button} onClick={() => set_nav_menu_isActive(true)}>
                         <CiMenuBurger />
                     </Button>
@@ -36,6 +39,19 @@ export default function Header({ ...props }) {
                             <li>
                                 <CiSettings />
                                 Settings
+                            </li>
+                        </Link>
+                        <Link to="#" onClick={() => setDarkmode(!darkMode)}>
+                            <li>
+                                {darkMode ? (
+                                    <>
+                                        <CiLight /> Light Mode
+                                    </>
+                                ) : (
+                                    <>
+                                        <CiDark /> Dark Mode
+                                    </>
+                                )}
                             </li>
                         </Link>
                         <Link to="#">
