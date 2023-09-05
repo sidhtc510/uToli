@@ -12,3 +12,7 @@
     grid-template-columns: auto 2fr 1fr;
     grid-template-rows: auto 1fr auto;
 }
+
+@media (max-width: 860px) {
+
+}

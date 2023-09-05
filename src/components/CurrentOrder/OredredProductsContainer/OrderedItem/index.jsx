@@ -1,12 +1,13 @@
-import React, { useState } from "react";
 import s from "./s.module.css";
+
+import React, { useState } from "react";
 import Button from "../../../UI/Button";
 import { BsTrash, BsCheckLg } from "react-icons/bs";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { decrAction, deleteAction, incrAction } from "../../../../store/slices/currentOrderSlice";
 import { useDispatch } from "react-redux";
 
-export default function OrderedItem({ id, name, dsc, img, price, count, isHistoryOrder }) {
+export default function OrderedItem({ id, name, img, price, count, isHistoryOrder }) {
     const dispatch = useDispatch();
     const [confirmDeleting, setConfirmDeleting] = useState(false);
 
